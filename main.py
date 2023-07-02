@@ -9,7 +9,7 @@ from torchvision import transforms
 
 images = os.listdir("./images")
 
-os.environ["TORCH_HOME"] = "E:\model_weights_edir"
+os.environ["TORCH_HOME"] = "/"
 model = torchvision.models.resnet18(weights = "DEFAULT")
 
 all_names = []
@@ -49,8 +49,8 @@ with torch.no_grad():
         if i % 100 == 0 and i != 0:
             print(i , "done")
 
-#np.save("all_vecs.npy" , all_vecs)
-#np.save("all_names.npy" , all_names)
+np.save("all_vecs.npy" , all_vecs)
+np.save("all_names.npy" , all_names)
 
 
 
